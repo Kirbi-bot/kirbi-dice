@@ -1,0 +1,18 @@
+{
+  "author": {
+      "name": "@naterchrdsn"
+  },
+  "dependencies": {
+    	"d20": "^1.4.1"
+  },
+  "description": "adds the !roll command to Kirbi",
+  "devDependencies": {},
+  "license": "Apache-2.0",
+  "name": "kirbi-dice",
+  "optionalDependencies": {},
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Richardson-Media-House/kirbi-dice.git"
+  },
+  "version": "0.0.1"
+}
