@@ -32,7 +32,7 @@ exports.roll = {
 
 			cb({
 				embed: {
-					color: Kirbi.Config.defaultEmbedColor,
+					color: Kirbi.Config.discord.defaultEmbedColor,
 					description: `${response}`
 				}
 			}, msg);
