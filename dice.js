@@ -1,6 +1,6 @@
 const d20 = require('d20');
 
-module.exports = function (config, auth) {
+module.exports = function (Kirbi) {
 	return {
 		commands: [
 			"roll"
@@ -31,7 +31,7 @@ module.exports = function (config, auth) {
 		
 					cb({
 						embed: {
-							color: config.discord.defaultEmbedColor,
+							color: Kirbi.Config.discord.defaultEmbedColor,
 							description: `${response}`
 						}
 					}, msg);
