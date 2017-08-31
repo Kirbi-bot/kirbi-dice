@@ -3,7 +3,7 @@ const d20 = require('d20');
 module.exports = function (Kirbi) {
 	return {
 		commands: [
-			"roll"
+			'roll'
 		],
 		roll: {
 			usage: '[# of sides] or [# of dice]d[# of sides]( + [# of dice]d[# of sides] + ...)',
@@ -11,24 +11,21 @@ module.exports = function (Kirbi) {
 			process: (msg, suffix, isEdit, cb) => {
 				if (suffix.split('d').length <= 1) {
 					cb(`${msg.author} rolled a ${d20.roll(suffix || '10')}`, msg);
-				}
-				else if (suffix.split('d').length > 1) {
-					var eachDie = suffix.split("+");
-					var passing = 0;
-					for (var i = 0; i < eachDie.length; i++) {
+				} else if (suffix.split('d').length > 1) {
+					const eachDie = suffix.split('+');
+					let passing = 0;
+					let response = '';
+					for (let i = 0; i < eachDie.length; i++) {
 						if (eachDie[i].split('d')[0] < 50) {
 							passing += 1;
-						};
+						}
 					}
-		
-					var response;
-		
-					if (passing == eachDie.length) {
+					if (passing === eachDie.length) {
 						response = `${msg.author} rolled a ${d20.roll(suffix)}`;
 					} else {
 						response = `${msg.author} tried to roll too many dice at once!`;
 					}
-		
+
 					cb({
 						embed: {
 							color: Kirbi.Config.discord.defaultEmbedColor,
