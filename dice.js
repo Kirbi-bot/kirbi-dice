@@ -1,6 +1,6 @@
 const d20 = require('d20');
 
-module.exports = function (Kirbi) {
+module.exports = Kirbi => {
 	return {
 		commands: [
 			'roll'
